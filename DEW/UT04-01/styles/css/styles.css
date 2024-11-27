@@ -11,7 +11,11 @@ form {
 fieldset {
     margin-bottom: 20px;
     border: none;
-    font-size: 20px;
+}
+
+legend {
+    font-size: 24pt;
+    text-decoration: underline;
 }
 
 .group {
