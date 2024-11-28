@@ -37,11 +37,18 @@ legend {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .row > div {
     padding-right: 10px;
     padding-left: 10px;
+}
+
+.row-baseline {
+    display: flex;
+    justify-content: baseline;
+    gap: 5px;
 }
 
 .columns {
@@ -101,4 +108,12 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.cuenta {
+    color: darkgrey;
+    font-size: 9pt;
+    margin: 0;
+    margin-bottom: 20px;
+    align-self:flex-end;
 }
