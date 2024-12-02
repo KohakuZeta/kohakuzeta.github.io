@@ -41,9 +41,11 @@ document.getElementById("opciondni").addEventListener("change", function () {
     if (this.value === "DNI") {
         inputDniNie.disabled = false;
         inputDniNie.placeholder = "DNI (Ej: 12345678A)";
+        inputDniNie.pattern = "[0-9]{8}[A-Z]{1}"
     } else if (this.value === "NIE") {
         inputDniNie.disabled = false;
         inputDniNie.placeholder = "NIE (Ej: X1234567L)";
+        inputDniNie.pattern = "[A-Z]{1}[0-9]{7}[A-Z]{1}"
     }
 });
 
@@ -60,11 +62,6 @@ document.getElementById("show-password").addEventListener("change", function () 
 });
 
 DOM.form.addEventListener("submit", (e) => {
-    if (DOM.name.validationMessage != "") {
-        e.preventDefault();
-        alert("Faltan campos por rellenar.");
-    }
-
     DOM.aficiones1.forEach(input => {
         input.checked === true ? checks = true : null
     })
@@ -79,12 +76,10 @@ DOM.form.addEventListener("submit", (e) => {
     }
 
     DOMvalues.forEach(v => {
-        if (v.validationMessage != "") {
-            nombres.push(v.id);
-        }
+        v.validationMessage != "" ? nombres.push(v.id) : null;
     })
 
-    if (nombres.lenght > 0) {
+    if (nombres.length > 0) {
         e.preventDefault();
         alert(`Quedan campos por rellenar: \n` + nombres.join(`\n`));
         nombres = [];

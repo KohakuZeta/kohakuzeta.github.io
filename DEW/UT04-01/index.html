@@ -45,12 +45,12 @@
                 <div class="row">
                     <div class="columns">
                         <label for="phone">Teléfono:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Ejem: (+34)922123123" required maxlength="12">
+                        <input type="tel" id="phone" name="phone" placeholder="Ejem: +34922123123" required maxlength="12" pattern="^\+([0-9]{11})$">
                     </div>
                     
                     <div class="columns">
                         <label for="postal-code">Código Postal:</label>
-                        <input type="text" id="postal-code" name="postal-code" placeholder="38XXX" required maxlength="5">
+                        <input type="text" id="postal-code" name="postal-code" placeholder="38XXX" required maxlength="5" pattern="[0-9]{5}">
                     </div>
                 </div>
                 <div class="row">
