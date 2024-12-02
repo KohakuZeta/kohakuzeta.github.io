@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/css/styles.css">
 </head>
 <body>
-    <form action="https://www.w3schools.com/action_page.php" method="post">
+    <form action="https://www.w3schools.com/action_page.php" method="post" id="formulario" novalidate>
         <fieldset>
             <legend>Datos Usuario</legend>
             <div class="group">
@@ -69,7 +69,7 @@
                         <label>Crear cuenta como:</label>
                         <div class="row-baseline">
                             <label for="particular">
-                                <input type="radio" id="particular" name="account-type" value="particular" selected>
+                                <input type="radio" id="particular" name="account-type" value="particular" checked>
                                 Particular
                             </label>
                             <label for="empresa">
@@ -88,9 +88,9 @@
                 <div class="row">
                     <label>Elige tus aficiones:</label>
                 </div>
-                <div class="grid-row">
+                <div class="grid-row" id="aficiones-1">
                     <label for="music">
-                        <input type="checkbox" id="music" name="music" value="checked" selected>
+                        <input type="checkbox" id="music" name="music" value="checked">
                         Música
                     </label>
                     <label for="sports">
@@ -102,7 +102,7 @@
                         Videojuegos
                     </label>
                 </div>
-                <div class="grid-row">
+                <div class="grid-row" id="aficiones-2">
                     <label for="crafts">
                         <input type="checkbox" id="crafts" name="crafts" value="checked">
                         Manualidades

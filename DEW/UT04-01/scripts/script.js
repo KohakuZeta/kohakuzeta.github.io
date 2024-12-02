@@ -1,3 +1,23 @@
+const DOM = {
+    form: document.getElementById("formulario"),
+    aficiones1: document.getElementById("aficiones-1").querySelectorAll("input"),
+    aficiones2: document.getElementById("aficiones-2").querySelectorAll("input"),
+    username: document.getElementById("username"),
+    password: document.getElementById("password"),
+    name: document.getElementById("name"),
+    surname: document.getElementById("surname"),
+    phone: document.getElementById("phone"),
+    postalCode: document.getElementById("postal-code"),
+    dninie: document.getElementById("dninie"),
+    birthYear: document.getElementById("birth-year"),
+    title: document.getElementById("title"),
+    description: document.getElementById("description")
+}
+
+let checks = false;
+let nombres = [];
+const DOMvalues = Object.values(DOM).slice(3);
+
 const select = document.getElementById("birth-year");
 
 for (let year = 2010; year >= 1950; year--) {
@@ -38,3 +58,35 @@ document.getElementById("show-password").addEventListener("change", function () 
         passwordInput.type = "password";
     }
 });
+
+DOM.form.addEventListener("submit", (e) => {
+    if (DOM.name.validationMessage != "") {
+        e.preventDefault();
+        alert("Faltan campos por rellenar.");
+    }
+
+    DOM.aficiones1.forEach(input => {
+        input.checked === true ? checks = true : null
+    })
+
+    DOM.aficiones2.forEach(input => {
+        input.checked === true ? checks = true : null
+    })
+
+    if (checks === false) {
+        e.preventDefault();
+        alert("No has marcado ninguna afición.")
+    }
+
+    DOMvalues.forEach(v => {
+        if (v.validationMessage != "") {
+            nombres.push(v.id);
+        }
+    })
+
+    if (nombres.lenght > 0) {
+        e.preventDefault();
+        alert(`Quedan campos por rellenar: \n` + nombres.join(`\n`));
+        nombres = [];
+    }
+})
