@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario usuarios-publicación</title>
+    <link rel="stylesheet" href="styles/css/styles.css">
+</head>
+<body>
+    <form action="https://www.w3schools.com/action_page.php" method="post" id="formulario" novalidate>
+        <fieldset>
+            <legend>Datos Usuario</legend>
+            <div class="group">
+                <div class="row">
+                    <div class="columns">
+                        <label for="username">Nombre de Usuario:</label>
+                        <input type="text" id="username" name="NombreUsuario" placeholder="UserName" required minlength="4" maxlength="20">
+                        <span class="mensajeError"></span>
+                    </div>
+                    <div class="columns">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="Contrasena" placeholder="Inserte contraseña de 8 caracteres numéricos" required pattern="^\d{8}$">
+                        <span class="mensajeError"></span>
+
+                        <div class="mostrar-pass">
+                            <input type="checkbox" id="show-password">
+                            <label for="show-password">Mostrar Contraseña</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <div class="group">
+                <legend>Datos Personales</legend>
+                <div class="row">
+                    <div class="columns">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="Nombre" placeholder="Nombre" required>
+                        <span class="mensajeError"></span>
+                    </div>
+                    <div class="columns">
+                        <label for="surname">Apellidos:</label>
+                        <input type="text" id="surname" name="Apellidos" placeholder="Apellidos" required>
+                        <span class="mensajeError"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns">
+                        <label for="phone">Teléfono:</label>
+                        <input type="tel" id="phone" name="Telefono" placeholder="Ejem: (+34)922123123" required minlength="14" maxlength="14" pattern="^\(\+34\)\d{9}$">
+                        <span class="mensajeError"></span>
+                    </div>
+                    
+                    <div class="columns">
+                        <label for="postal-code">Código Postal:</label>
+                        <input type="text" id="postal-code" name="CodigoPostal" placeholder="38XXX" required minlength="5" maxlength="5" pattern="^38\d{3}$">
+                        <span class="mensajeError"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns">
+                        <label for="dni">DNI/NIE:</label>
+                        <div class="row-baseline">
+                            <select name="TipoDocumento" id="opciondni" required>
+                                <option value="" selected disabled>---</option>
+                                <option value="DNI">DNI</option>
+                                <option value="NIE">NIE</option>
+                            </select>
+                            <input type="text" id="dninie" name="DniNie" placeholder="Escoja su documento" required disabled maxlength="9">
+                            <span class="mensajeError"></span>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <label>Crear cuenta como:</label>
+                        <div class="row-baseline">
+                            <label for="particular">
+                                <input type="radio" id="particular" name="CuentaComo" value="particular" checked>
+                                Particular
+                            </label>
+                            <label for="empresa">
+                                <input type="radio" id="empresa" name="CuentaComo" value="empresa">
+                                Empresa
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <label for="birth-year">Año de Nacimiento:</label>
+                        <select id="birth-year" name="AnioNacimiento" required>
+                            <option value="" disabled selected>Selecciona un año</option>
+                        </select>
+                        <span class="mensajeError"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label>Elige tus aficiones:</label>
+                </div>
+                <div class="grid-row" id="aficiones-1">
+                    <label for="music">
+                        <input type="checkbox" id="music" name="Aficiones" value="MU">
+                        Música
+                    </label>
+                    <label for="sports">
+                        <input type="checkbox" id="sports" name="Aficiones" value="DE">
+                        Deporte
+                    </label>
+                    <label for="videogames">
+                        <input type="checkbox" id="videogames" name="Aficiones" value="VI">
+                        Videojuegos
+                    </label>
+                </div>
+                <div class="grid-row" id="aficiones-2">
+                    <label for="crafts">
+                        <input type="checkbox" id="crafts" name="Aficiones" value="MA">
+                        Manualidades
+                    </label>
+                    <label for="arts">
+                        <input type="checkbox" id="arts" name="Aficiones" value="AR">
+                        Artes
+                    </label>
+                    <label for="reading">
+                        <input type="checkbox" id="reading" name="Aficiones" value="LE">
+                        Lectura
+                    </label>
+                </div>
+                <input type="hidden" id="aficiones-hidden" name="Aficiones" value="">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <div class="group">
+                <legend>Datos Publicación</legend>
+                <div class="columns">
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" name="PublicacionTitulo" placeholder="Título" maxlength="15" minlength="4" required>
+                    <span class="mensajeError"></span>
+                    <span class="cuenta">0/15</span>
+                
+                    <label for="description">Descripción:</label>
+                    <textarea id="description" name="PublicacionDescripcion" placeholder="Descripción" maxlength="120" minlength="4" required></textarea>
+                    <span class="mensajeError"></span>
+                    <span class="cuenta">0/120</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <script src="scripts/script.js" type="module"></script>
+</body>
+</html>

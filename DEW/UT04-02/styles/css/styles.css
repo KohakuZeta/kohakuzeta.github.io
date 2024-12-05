@@ -1,0 +1,147 @@
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#lista-errores {
+    width: 45%;
+    border: 1px solid red;
+}
+
+#lista-errores > ul {
+    list-style: none;
+    color: red;
+    margin: 0;
+    padding: 2%;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+form {
+    width: 45%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border: none;
+}
+
+legend {
+    font-size: 24pt;
+    text-decoration: underline;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+}
+
+.group > div {
+    width: 100%;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.row > div {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.row-baseline {
+    display: flex;
+    justify-content: baseline;
+    gap: 5px;
+}
+
+.columns {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+label {
+    display: inline-block;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+}
+
+#description {
+    min-height: 150px;;
+}
+
+.mostrar-pass {
+    display: flex;
+    flex-direction: row;
+}
+
+input, select, textarea {
+    margin-bottom: 10px;
+
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:required:valid, select:required:valid, textarea:required:valid {
+    border-color: black;
+}
+
+input:required:invalid, select:required:invalid, textarea:required:invalid {
+    border-color: red;
+    color: red;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.cuenta {
+    color: darkgrey;
+    font-size: 9pt;
+    margin: 0;
+    margin-bottom: 20px;
+    align-self:flex-end;
+}
+
+.mensajeError {
+    font-size: 0.8em;
+    color: red;
+}
